@@ -1,11 +1,10 @@
 ---
 layout:     post
-title:      "Example Post"
-date:       2014-09-22
-author:     "Hux"
+title:      "About Javascript"
+date:       2017-03-23
+author:     "chaoming"
 header-img: "post-bg-js-version.jpg"
 tags:
-    - 前端开发
     - JavaScript
     - 翻译
 ---
@@ -61,5 +60,8 @@ JavaScript 有着很奇怪的命名史。
 
 #### 著作权声明
 
-本文译自 [ES5, ES6, ES2016, ES.Next: What's going on with JavaScript versioning?](http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/)   
-译者 [黄玄](http://weibo.com/huxpro)，首次发布于 [Hux Blog](http://huangxuan.me)，转载请保留以上链接
+本文译自 [ES5, ES6, ES2016, ES.Next: What's going on with JavaScript versioning?](http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/)
+译者 [黄玄](http://weibo.com/huxpro)，转载请保留以上链接。
+学习JavaScript那么久，无意之间看到这篇介绍，挺有意思特意转载。
+
+

@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      "Example Post with Code Highlight"
+title:      "JS模块加载"
 subtitle:   "CommonJS，RequireJS，SeaJS 归纳笔记"
-date:       2013-05-25
-author:     "Hux"
+date:       2017-03-23 22:45:58
+author:     "Damon"
 catalog:    true
 header-img: "post-bg-js-module.jpg"
 tags:
@@ -263,7 +263,7 @@ Sea.js 借鉴了 RequireJS 的不少东西，比如将 FlyScript 中的 module.d
 **虽然两者目前都兼容各种风格，但其底层原理并不相同，从其分别推荐的写法就可以看出两者背后原理的不同：**
 
 1. 对于依赖的模块，AMD 是**提前执行**，CMD 是**懒执行**。（都是先加载）
-*  CMD 推崇**依赖就近**，AMD 推崇**依赖前置**。   
+*  CMD 推崇**依赖就近**，AMD 推崇**依赖前置**。
 
 看代码：
 
@@ -299,4 +299,5 @@ define(function(require, exports, module) {
 
 ## WebPack
 
-> working...
+> 后续文章,展开补充...
+
