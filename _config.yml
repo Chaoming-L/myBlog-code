@@ -131,4 +131,4 @@ theme: huxblog
 deploy:
   type: git
   repo: https://github.com/chaoming56/hexo-blog.git
-  branch: gh-pages
+  branch: master
