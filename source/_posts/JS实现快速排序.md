@@ -6,7 +6,7 @@ header-img: "post-bg-js-version.jpg"
 date: 2017-06-16 13:41:37
 tags:
     - JS
-    - 数组
+    - 前端面试
 ---
 
 ## 前言
@@ -59,7 +59,7 @@ quickSort(arr)  // [1,2,3,11,22]
 sort() 方法在适当的位置对数组的元素进行排序，并返回数组。默认排序顺序是根据字符串Unicode码点。
 sort(compareFunction) 使用compareFunction进行进阶排序需求。
 
-说道排序怎么能忘记JS原生的排序方法sort呢?  come on! 见识一下sort方法的强大之处吧! 二话不说,代码撸起来..
+排序怎么能忘记JS原生的排序方法sort呢?  come on!  二话不说,代码撸起来..
 
 ```
 var fruit = ['cherries', 'apples', 'bananas'];
