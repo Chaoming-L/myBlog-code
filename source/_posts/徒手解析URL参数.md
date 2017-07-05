@@ -1,6 +1,5 @@
 ---
 title: 徒手解析URL参数
-subtitle: "手写代码"
 date: 2017-06-19 14:19:00
 author: "Damon"
 header-img: "/img/about-bg.jpg"
