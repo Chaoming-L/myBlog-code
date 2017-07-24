@@ -7,9 +7,10 @@ function debounce(func, delay) {
     let timer;
     return function () {
         let context = this, arg = arguments;
-
+        // 由于事件持续相应,定时器会在每次相应中清除掉.
+        // 最终使得,事件停止相应之前的建立的最后一个定时器生效
         clearTimeout(timer);
-
+ 
         timer = setTimeout(function () {
             func.apply(context, arg)
         }, delay)
@@ -32,15 +33,13 @@ function throttle(func, wait) {
         if (!startTime) {
             startTime = currentTime
         }
-
+        // 大于间隔时间才马上执行函数, 然后更新函数执行时间
         if (currentTime - startTime > wait) {
             func.apply(context, arg)
             startTime = currentTime
         }
     }
 }
-
-
 
 
 function say(n) {
