@@ -2,4 +2,7 @@ node_modules/
 .idea/vcs.xml
 .idea/
 .deploy_git/
+<<<<<<< HEAD
 public/
+=======
+>>>>>>> bdb025e6735c7ef8baf89a2c5a1a5528f866a652
