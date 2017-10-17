@@ -90,14 +90,14 @@
 
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/about/">About Me</a>
                         </li>
                         
                     
@@ -198,7 +198,7 @@
 </ul>
 <h2 id="浏览器缓存机制详解"><a href="#浏览器缓存机制详解" class="headerlink" title="浏览器缓存机制详解"></a>浏览器缓存机制详解</h2><p>浏览器缓存控制机制有两种：HTML Meta标签 和 HTTP头信息。</p>
 <h3 id="HTML-Meta标签控制缓存"><a href="#HTML-Meta标签控制缓存" class="headerlink" title="HTML Meta标签控制缓存"></a>HTML Meta标签控制缓存</h3><p>浏览器缓存机制，其实就是HTTP协议定制的缓存机制（如：Expires; Cache-control等）。但是也有非HTTP协议定义的缓存机制，如使用HTML Meta标签，Web开发者可以在HTML页面的<head>节点中加入<meta>标签，代码如下：</head></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Pragma"</span> <span class="attr">content</span>=<span class="string">"no-cache"</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Pragma"</span> <span class="attribute">content</span>=<span class="string">"no-cache"</span>&gt;</div></pre></td></tr></table></figure>
 <p>上述代码的作用是告诉浏览器当前页面不被缓存，每次访问都需要去服务器拉取。使用上很简单，但只有部分浏览器可以支持，而且所有缓存代理服务器都不支持，因为代理不解析HTML内容本身。而广泛应用的还是HTTP头信息来控制缓存，下面主要介绍HTTP协议定义的缓存机制。</p>
 <h3 id="HTTP头信息控制缓存"><a href="#HTTP头信息控制缓存" class="headerlink" title="HTTP头信息控制缓存"></a>HTTP头信息控制缓存</h3><h4 id="浏览器请求流程"><a href="#浏览器请求流程" class="headerlink" title="浏览器请求流程"></a>浏览器请求流程</h4><ul>
 <li><p>浏览器第一次请求流程图：<br><img src="http://static.oschina.net/uploads/space/2015/0119/015343_psx2_568818.png?_=4807408" alt="image"></p>
@@ -376,6 +376,10 @@
                 
 
                 <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2017/10/17/ImagePreview组件/" data-toggle="tooltip" data-placement="top" title="图片预览组件的一些事一些情">&larr; Previous Post</a>
+                        </li>
                     
                     
                         <li class="next">

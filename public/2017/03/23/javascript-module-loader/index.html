@@ -90,14 +90,14 @@
 
                         
                         <li>
-                            <a href="/about/">About Me</a>
+                            <a href="/archives/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">Archives</a>
+                            <a href="/about/">About Me</a>
                         </li>
                         
                     
@@ -207,7 +207,7 @@
 <li><a href="#amd-vs-cmd">AMD vs CMD</a></li>
 <li><a href="#webpack">WebPack</a></li>
 </ol>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="title">autoDetect</span>()&#123;</div><div class="line">    console.log('ye, it <span class="keyword">is</span> written <span class="keyword">in</span> JavaScript!')</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">autoDetect</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'ye, it is written in JavaScript!'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="CommonJS-amp-Node"><a href="#CommonJS-amp-Node" class="headerlink" title="CommonJS &amp; Node"></a>CommonJS &amp; Node</h2><blockquote>
 <p>Javascript: not just for browsers any more! —— CommonJS Slogen</p>
 </blockquote>
@@ -249,7 +249,7 @@
 <p>As the comment indicates above, if require() is async, this code will not work. However, loading scripts synchronously in the browser kills performance. So, what to do?</p>
 </blockquote>
 <p>所以我们需要 <strong>Function Wrapping</strong> 来获取依赖并且提前通过 script tag 提前加载进来</p>
-<iframe scrolling="no" width="[width]" height="[height]" src="http://jsfiddle.net/shorttag/embedded/[tabs]/[skin]" frameborder="0" allowfullscreen></iframe>
+<iframe scrolling="no" width="[width]" height="[height]" src="//jsfiddle.net/shorttag/embedded/[tabs]/[skin]" frameborder="0" allowfullscreen></iframe>
 <p>当依赖模块非常多时，这种<strong>依赖前置</strong>的写法会显得有点奇怪，所以 AMD 给了一个语法糖， <strong>simplified CommonJS wrapping</strong>，借鉴了 CommonJS 的 require 就近风格，也更方便对 CommonJS 模块的兼容：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">require</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> dependency1 = <span class="built_in">require</span>(<span class="string">'dependency1'</span>),</div><div class="line">        dependency2 = <span class="built_in">require</span>(<span class="string">'dependency2'</span>);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>The AMD loader will parse out the <code>require(&#39;&#39;)</code> calls by using <code>Function.prototype.toString()</code>, then internally convert the above define call into this:</p>
@@ -289,7 +289,7 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 获取模块 a 的接口</span></div><div class="line">    <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'./a'</span>);</div><div class="line">    <span class="comment">// 调用模块 a 的方法</span></div><div class="line">    a.doSomething();</div><div class="line"></div><div class="line">    <span class="comment">// 对外提供 foo 属性</span></div><div class="line">    exports.foo = <span class="string">'bar'</span>;</div><div class="line">    <span class="comment">// 对外提供 doSomething 方法</span></div><div class="line">    exports.doSomething = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>但是你也可以使用 AMD 风格，或者使用 return 来进行模块暴露</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">define(<span class="string">'hello'</span>, [<span class="string">'jquery'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 模块代码...</span></div><div class="line"></div><div class="line">    <span class="comment">// 直接通过 return 暴露接口</span></div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">foo</span>: <span class="string">'bar'</span>,</div><div class="line">        <span class="attr">doSomething</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">define(<span class="string">'hello'</span>, [<span class="string">'jquery'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 模块代码...</span></div><div class="line"></div><div class="line">    <span class="comment">// 直接通过 return 暴露接口</span></div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        foo: <span class="string">'bar'</span>,</div><div class="line">        doSomething: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>Sea.js 借鉴了 RequireJS 的不少东西，比如将 FlyScript 中的 module.declare 改名为 define 等。Sea.js 更多地来自 Modules/2.0 的观点，但尽可能去掉了学院派的东西，加入了不少实战派的理念。</p>
 <h2 id="AMD-vs-CMD"><a href="#AMD-vs-CMD" class="headerlink" title="AMD vs CMD"></a>AMD vs CMD</h2><p><strong>虽然两者目前都兼容各种风格，但其底层原理并不相同，从其分别推荐的写法就可以看出两者背后原理的不同：</strong></p>
 <ol>

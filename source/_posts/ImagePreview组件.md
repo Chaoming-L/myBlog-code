@@ -1,10 +1,13 @@
 ---
-title: ImagePreview组件
+title: 图片预览组件的一些事一些情
 date: 2017-10-17 14:21:45
 tags: 
+    - React
 ---
 
-# 组件设计总结
+# React组件设计
+demo: http://gmfe.github.io/react-gm/#/doc/ImagePreview
+github源码: https://github.com/gmfe/react-gm/tree/master/src/component/image_preview
 
 ---
 ## react组件设计
