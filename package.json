@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.3.9"
+    "version": "3.2.2"
   },
   "scripts": {
-      "publish": "sh sh/publish.sh"
+    "publish": "sh sh/publish.sh"
   },
   "dependencies": {
     "hexo": "^3.2.0",
