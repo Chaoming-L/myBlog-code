@@ -130,5 +130,5 @@ theme: huxblog
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/chaoming56/hexo-blog.git
+  repo: git@github.com:chaoming56/hexo-blog.git
   branch: gh-pages
